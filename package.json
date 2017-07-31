@@ -19,6 +19,7 @@
   "homepage": "https://github.com/luislard/ontopic#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-notify": "^3.0.0",
     "gulp-sass": "^3.1.0",
     "node-sass": "^4.5.3"
   }
