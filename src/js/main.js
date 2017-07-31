@@ -1,3 +1,3 @@
 let word = 'ecmascript6';
 
-console.log(`Hello ${word}`);
+console.log(`Hello ${word}!!`);
