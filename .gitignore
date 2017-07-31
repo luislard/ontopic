@@ -3,3 +3,6 @@
 
 # Ignoring dist folder
 /dist/
+
+# Ignoring mac file
+.DS_Store
