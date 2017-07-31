@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/luislard/ontopic/issues"
   },
-  "homepage": "https://github.com/luislard/ontopic#readme"
+  "homepage": "https://github.com/luislard/ontopic#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
