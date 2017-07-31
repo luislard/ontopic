@@ -14,7 +14,7 @@ var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
 
 // definimos la tarea por defecto
-gulp.task("default", ["sass", "js"], function(){
+gulp.task("default", ["html","sass", "js"], function(){
 
     // iniciamos el servidor de desarrollo
     browserSync.init({ 
@@ -67,4 +67,14 @@ gulp.task("js", function(){
         .pipe(gulp.dest("dist/")) // lo guardamos en la carpeta dist
         .pipe(browserSync.stream()) // recargamos el navegador
         .pipe(notify("JS Compilado"));
+});
+
+// copiar e importar html
+gulp.task("html", function(){
+    gulp.src("src/*.html")
+        .pipe(gulpImport("src/components/")) // reemplaza los @import de los HTML
+        .pipe(htmlmin({collapseWhitespace: true})) // minifica el HTML
+        .pipe(gulp.dest("dist/"))
+        .pipe(browserSync.stream())
+        .pipe(notify("HTML importado"));
 });
