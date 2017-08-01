@@ -33,7 +33,7 @@ gulp.task("default", ["html","sass", "js"], function(){
 
 // compilar sass
 gulp.task("sass", function(){
-    gulp.src("src/scss/style.scss") // cargamos el archivo style.scss
+    gulp.src(["node_modules/materialize-css/dist/css/materialize.min.css","src/scss/style.scss"]) // cargamos el archivo style.scss
         .pipe(sourcemaps.init()) // comienza a capturar los sourcemaps
         .pipe(sass().on("error", function(error){ // lo compilamos con gulp-sass
             return notify().write(error); // si ocurre un error, mostramos una notificación
@@ -43,7 +43,7 @@ gulp.task("sass", function(){
             cssnano()       // comprime/minifca el CSS
         ]))
         .pipe(sourcemaps.write("./")) // guarda el sourcemap en la misma carpeta que el CSS
-        .pipe(gulp.dest("dist/")) // guardamos el resultado en la carpeta css
+        .pipe(gulp.dest("dist/css/")) // guardamos el resultado en la carpeta css
         .pipe(browserSync.stream()) // recargue el CSS del navegador
         .pipe(notify("SASS Compilado 🤘🏻")) // muestra notifiación en pantalla
 });
@@ -64,7 +64,7 @@ gulp.task("js", function(){
         .pipe(sourcemaps.init({loadMaps: true})) // captura los sourcemaps del archivo fuente
         .pipe(uglify()) // minificamos el JavaScript
         .pipe(sourcemaps.write('./')) // guarda los sourcemaps en el mismo directorio que el archivo fuente
-        .pipe(gulp.dest("dist/")) // lo guardamos en la carpeta dist
+        .pipe(gulp.dest("dist/js/")) // lo guardamos en la carpeta dist
         .pipe(browserSync.stream()) // recargamos el navegador
         .pipe(notify("JS Compilado"));
 });
