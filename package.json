@@ -36,5 +36,8 @@
     "gulp-uglify": "^3.0.0",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.8"
+  },
+  "dependencies": {
+    "materialize-css": "^0.100.1"
   }
 }
